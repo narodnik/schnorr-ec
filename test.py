@@ -1,0 +1,86 @@
+valid = [
+    {
+        "Private key": "0000000000000000000000000000000000000000000000000000000000000001",
+        "Public key": (0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8),
+        "Message": "0000000000000000000000000000000000000000000000000000000000000000",
+        "Signature": "787A848E71043D280C50470E8E1532B2DD5D20EE912A45DBDD2BD1DFBF187EF67031A98831859DC34DFFEEDDA86831842CCD0079E1F92AF177F7F22CC1DCED05",
+    },
+    {
+        "Private key": "B7E151628AED2A6ABF7158809CF4F3C762E7160F38B4DA56A784D9045190CFEF",
+        "Public key": (0xdff1d77f2a671c5f36183726db2341be58feae1da2deced843240f7b502ba659, 0x2ce19b946c4ee58546f5251d441a065ea50735606985e5b228788bec4e582898),
+        "Message": "243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89",
+        "Signature": "2A298DACAE57395A15D0795DDBFD1DCB564DA82B0F269BC70A74F8220429BA1D1E51A22CCEC35599B8F266912281F8365FFC2D035A230434A1A64DC59F7013FD",
+    },
+    {
+        "Private key": "C90FDAA22168C234C4C6628B80DC1CD129024E088A67CC74020BBEA63B14E5C7",
+        "Public key": (0xfac2114c2fbb091527eb7c64ecb11f8021cb45e8e7809d3c0938e4b8c0e5f84b, 0xc655c2105c3c5c380f2c8b8ce2c0c25b0d57062d2d28187254f0deb802b8891f),
+        "Message": "5E2D58D8B3BCDF1ABADEC7829054F90DDA9805AAB56C77333024B9D0A508B75C",
+        "Signature": "00DA9B08172A9B6F0466A2DEFD817F2D7AB437E0D253CB5395A963866B3574BE00880371D01766935B92D2AB4CD5C8A2A5837EC57FED7660773A05F0DE142380",
+    }
+]
+
+only_verify = [
+    {
+        "Public key": (0xdefdea4cdb677750a420fee807eacf21eb9898ae79b9768766e4faa04a2d4a34, 0x4211ab0694635168e997b0ead2a93daeced1f4a04a95c0f6cfb199f69e56eb77),
+        "Message": "4DF3C3F68FCC83B27E9D42C90431A72499F17875C81A599B566C9889B9696703",
+        "Signature": "00000000000000000000003B78CE563F89A0ED9414F5AA28AD0D96D6795F9C6302A8DC32E64E86A333F20EF56EAC9BA30B7246D6D25E22ADB8C6BE1AEB08D49D",
+    }
+]
+
+fail = [
+    {
+        "Public key": (0xdff1d77f2a671c5f36183726db2341be58feae1da2deced843240f7b502ba659, 0x2ce19b946c4ee58546f5251d441a065ea50735606985e5b228788bec4e582898),
+        "Message": "243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89",
+        "Signature": "2A298DACAE57395A15D0795DDBFD1DCB564DA82B0F269BC70A74F8220429BA1DFA16AEE06609280A19B67A24E1977E4697712B5FD2943914ECD5F730901B4AB7",
+        "Reason": "incorrect R residuosity",
+    },
+    {
+        "Public key": (0xfac2114c2fbb091527eb7c64ecb11f8021cb45e8e7809d3c0938e4b8c0e5f84b, 0xc655c2105c3c5c380f2c8b8ce2c0c25b0d57062d2d28187254f0deb802b8891f),
+        "Message": "5E2D58D8B3BCDF1ABADEC7829054F90DDA9805AAB56C77333024B9D0A508B75C",
+        "Signature": "00DA9B08172A9B6F0466A2DEFD817F2D7AB437E0D253CB5395A963866B3574BED092F9D860F1776A1F7412AD8A1EB50DACCC222BC8C0E26B2056DF2F273EFDEC",
+        "Reason": "negated message hash",
+    },
+    {
+        "Public key": (0x79be667ef9dcbbac55a06295ce870b07029bfcdb2dce28d959f2815b16f81798, 0x483ada7726a3c4655da4fbfc0e1108a8fd17b448a68554199c47d08ffb10d4b8),
+        "Message": "0000000000000000000000000000000000000000000000000000000000000000",
+        "Signature": "787A848E71043D280C50470E8E1532B2DD5D20EE912A45DBDD2BD1DFBF187EF68FCE5677CE7A623CB20011225797CE7A8DE1DC6CCD4F754A47DA6C600E59543C",
+        "Reason": "negated s value",
+    },
+    {
+        "Public key": (0xdff1d77f2a671c5f36183726db2341be58feae1da2deced843240f7b502ba659, 0xd31e646b93b11a7ab90adae2bbe5f9a15af8ca9f967a1a4dd7877412b1a7d397),
+        "Message": "243F6A8885A308D313198A2E03707344A4093822299F31D0082EFA98EC4E6C89",
+        "Signature": "2A298DACAE57395A15D0795DDBFD1DCB564DA82B0F269BC70A74F8220429BA1D1E51A22CCEC35599B8F266912281F8365FFC2D035A230434A1A64DC59F7013FD",
+        "Reason": "negated public key",
+    }
+]
+
+from sipa import schnorr_sign, schnorr_verify
+
+for test in valid:
+    secret = bytes.fromhex(test["Private key"])
+    public_key = test["Public key"]
+    message = bytes.fromhex(test["Message"])
+    signature = bytes.fromhex(test["Signature"])
+    success = schnorr_verify(message, public_key, signature)
+    assert success
+    print(success)
+    secret = int.from_bytes(secret, byteorder="big")
+    signature_validate = schnorr_sign(message, secret)
+    assert signature == signature_validate
+
+for test in only_verify:
+    public_key = test["Public key"]
+    message = bytes.fromhex(test["Message"])
+    signature = bytes.fromhex(test["Signature"])
+    success = schnorr_verify(message, public_key, signature)
+    assert success
+    print(success)
+
+for test in fail:
+    public_key = test["Public key"]
+    message = bytes.fromhex(test["Message"])
+    signature = bytes.fromhex(test["Signature"])
+    success = schnorr_verify(message, public_key, signature)
+    assert not success
+    print(success)
+
